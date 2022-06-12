@@ -1,0 +1,29 @@
+{
+    "name": "hosting-a-full-stack-application",
+    "scripts": {
+        "frontend:install": "cd udagram-frontend && npm install && cd ..",
+        "api:install": "cd udagram-api && npm install && cd ..",
+
+        "frontend:start": "cd udagram-frontend && npm run start && cd ..",
+        "api:start": "cd udagram-api && npm run dev && cd ..",
+
+        "frontend:unit test": "cd udagram-frontend && npm run test && cd ..",
+        "frontend:e2e test": "cd udagram-frontend && npm run e2e && cd ..",
+        "api:test": "cd udagram-api && npm run test && cd ..",
+
+        "frontend:build": "cd udagram-frontend && npm run build && cd ..",
+        "api:build": "cd udagram-api && npm run build && cd ..",
+
+        "frontend:deploy": "cd udagram-frontend && npm run build && aws s3 cp --recursive --acl public-read ./www s3://tasnim-udagram/ && cd ..",
+        "api:deploy": "cd udagram-api && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh && cd ..",
+        
+        "api:terminate": "cd udagram-api && eb terminate udagram-api-dev && cd ..",
+        "api:init_app": "cd udagram-api && eb init udagram-api --platform node.js --region us-east-1 && cd ..",
+        "api:create_env": "cd udagram-api && eb create --sample udagram-api-dev && cd .."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tasnimsamir/Hosting-a-Full-Stack-Application.git"
+    }
+}
+
