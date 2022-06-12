@@ -38,8 +38,8 @@ workflows:
       - frontend:
           filters:
               branches:
-                only: master
+                only: main
       - api:
           filters:
               branches:
-                only: master
+                only: main
