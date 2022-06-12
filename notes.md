@@ -1,5 +1,6 @@
 ## Steps:
 
+
 * Deploying the Application
 
     1. Connect Postgres Database locally
