@@ -1,6 +1,8 @@
 #  initialize the application
 eb init udagram-api --platform node.js --region us-east-1
 
+
+eb create udagram-api-dev
 # use the environment
 eb use udagram-api-dev
 
