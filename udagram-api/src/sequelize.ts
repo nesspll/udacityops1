@@ -9,6 +9,26 @@ import { config } from "./config/config";
    port: config.port_db,
    dialect: "postgres",
    storage: ":memory:",
+   retry: {
+    match: [
+        /ETIMEDOUT/,
+        /EHOSTUNREACH/,
+        /ECONNRESET/,
+        /ECONNREFUSED/,
+        /ETIMEDOUT/,
+        /ESOCKETTIMEDOUT/,
+        /EHOSTUNREACH/,
+        /EPIPE/,
+        /EAI_AGAIN/,
+        /SequelizeConnectionError/,
+        /SequelizeConnectionRefusedError/,
+        /SequelizeHostNotFoundError/,
+        /SequelizeHostNotReachableError/,
+        /SequelizeInvalidConnectionError/,
+        /SequelizeConnectionTimedOutError/
+    ],
+    max: 5
+    }
  });
 
 
